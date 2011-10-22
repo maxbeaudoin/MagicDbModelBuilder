@@ -1,4 +1,4 @@
-MagicDbModelBuilder is a set of wrapper classes that enable the creationg/configuration of a model at runtime.
+MagicDbModelBuilder is a set of wrapper classes that enable the creation/configuration of models at runtime.
 A feature that Entity Framework does not support, for now.
 
 What you used to do:
