@@ -1,2 +1,22 @@
 MagicDbModelBuilder is a set of wrapper classes that enable the creationg/configuration of a model at runtime.
 A feature that Entity Framework does not support, for now.
+
+What you used to do:
+
+var builder = new DbModelBuilder();
+builder.Entity<Post>()
+  .HasKey(p => p.Id);
+
+
+What you couldn't do:
+
+var builder = new DbModelBuilder();
+var wrapper = new DbModelBuilderWrapper(builder);
+wrapper.Entity(typeof(Post))
+  .HasKey(typeof(Guid), "Id");
+
+Support for more methods to come...
+MagicDbModelBuilder is looking for men, courageous men!
+
+Peace,
+Maxime
