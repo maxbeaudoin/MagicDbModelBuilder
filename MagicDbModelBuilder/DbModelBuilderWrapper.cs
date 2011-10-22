@@ -16,10 +16,11 @@ namespace MagicDbModelBuilder
         
         public EntityTypeConfigurationWrapper Entity(Type entityType)
         {
-            return _builder.GetType()
+            var config = _builder.GetType()
                 .GetMethod("Entity")
                 .MakeGenericMethod(entityType)
                 .Invoke(_builder, null);
+            return new EntityTypeConfigurationWrapper(config);
         }
     }
 }

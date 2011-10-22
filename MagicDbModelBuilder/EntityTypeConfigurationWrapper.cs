@@ -17,17 +17,20 @@ namespace MagicDbModelBuilder
             _type = _config.GetType().GetGenericArguments()[0];
         }
 
-        public EntityTypeConfigurationWrapper HasKey(Type keyType, string propertyName)
+        public EntityTypeConfigurationWrapper HasKey(Type keyType, params string[] propertyNames)
         {
+            if (propertyNames.Length > 1)
+                throw new NotImplementedException();
+
             var paramEx = Expression.Parameter(_type, "x");
-            var lambdaEx = Expression.Lambda(Expression.Property(paramEx, propertyName), paramEx);
+            var lambdaEx = Expression.Lambda(Expression.Property(paramEx, propertyNames[0]), paramEx);
 
             _config.GetType()
                 .GetMethod("HasKey")
                 .MakeGenericMethod(keyType)
                 .Invoke(_config, new[] { lambdaEx });
 
-            return _config;
+            return this;
         }
     }
 }
