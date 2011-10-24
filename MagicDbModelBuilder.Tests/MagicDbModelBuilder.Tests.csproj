@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbModelBuilderExtensionsTests.cs" />
+    <Compile Include="EntityTypeConfigurationWrapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unicorn.cs" />
   </ItemGroup>
