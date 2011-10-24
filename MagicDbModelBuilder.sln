@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbModelBuilderWrapper", "DbModelBuilderWrapper\DbModelBuilderWrapper.csproj", "{BBD1EB27-12CB-42C5-83A6-7C03D10DEAAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDbModelBuilder", "MagicDbModelBuilder\MagicDbModelBuilder.csproj", "{BBD1EB27-12CB-42C5-83A6-7C03D10DEAAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicDbModelBuilder.Tests", "MagicDbModelBuilder.Tests\MagicDbModelBuilder.Tests.csproj", "{455FD1E8-9948-4CD5-8AC8-A0116BCDF294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{BBD1EB27-12CB-42C5-83A6-7C03D10DEAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD1EB27-12CB-42C5-83A6-7C03D10DEAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD1EB27-12CB-42C5-83A6-7C03D10DEAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455FD1E8-9948-4CD5-8AC8-A0116BCDF294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455FD1E8-9948-4CD5-8AC8-A0116BCDF294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455FD1E8-9948-4CD5-8AC8-A0116BCDF294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455FD1E8-9948-4CD5-8AC8-A0116BCDF294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
