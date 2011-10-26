@@ -7,24 +7,22 @@ var builder = new DbModelBuilder();
 builder.Entity<Post>()
   .HasKey(p => p.Id);
 
-
 ... what you couldn't do:
 
 var builder = new DbModelBuilder();
-var wrapper = new DbModelBuilderWrapper(builder);
-wrapper.Entity(typeof(Post))
+builder.Entity(typeof(Post))
   .HasKey(typeof(Guid), "Id");
 
 ... or ...
 
-wrapper.Entity(typeof(Post))
+builder.Entity(typeof(Post))
   .Property(typeof(int), "Id")
   .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
 ... or ...
 
-wrapper.Entity(typeof(Post))
-  .DateTimeProperty("ModifiedOn", true) // supports nullable with optional parameter 'nullable' currently set to true 
+builder.Entity(typeof(Post))
+  .DateTimeProperty("ModifiedOn", true) // supports nullable with optional parameter 'nullable' set to true 
   .IsRequired();
 
-More implementations to come.
+More implementations to come...
