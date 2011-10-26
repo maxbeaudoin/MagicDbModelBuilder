@@ -24,6 +24,8 @@ namespace MagicDbModelBuilder.Tests
             Assert.That(config.GetType() == typeof(EntityTypeConfigurationWrapper));
             Assert.That(config.EntityTypeConfiguration.GetType() == typeof(EntityTypeConfiguration<Unicorn>));
             Assert.That(config.GenericArgument == typeof(Unicorn));
+
+            Assert.That(_builder.Configurations.IsConfigured(typeof(Unicorn)));
         }
     }
 }
