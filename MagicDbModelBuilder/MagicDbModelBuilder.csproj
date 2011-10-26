@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationRegistrarExtensions.cs" />
     <Compile Include="DbModelBuilderExtensions.cs" />
     <Compile Include="EntityTypeConfigurationWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

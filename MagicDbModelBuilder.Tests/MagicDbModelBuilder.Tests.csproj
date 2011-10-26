@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationRegistrarTests.cs" />
     <Compile Include="DbModelBuilderExtensionsTests.cs" />
     <Compile Include="EntityTypeConfigurationWrapperTests.cs" />
+    <Compile Include="Model\UnicornEntityTypeConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unicorn.cs" />
+    <Compile Include="Model\Unicorn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
