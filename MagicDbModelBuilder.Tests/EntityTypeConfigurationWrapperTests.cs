@@ -29,15 +29,22 @@ namespace MagicDbModelBuilder.Tests
 
             Assert.NotNull(config);
             Assert.That(config.GetType() == typeof(EntityTypeConfigurationWrapper));
-            Assert.That(config.EntityTypeConfiguration.GetType() == typeof(EntityTypeConfiguration<Unicorn>));
-            Assert.That(config.GenericArgument == typeof(Unicorn));
+            Assert.That(config.TypeConfiguration.GetType() == typeof(EntityTypeConfiguration<Unicorn>));
+            Assert.That(config.ConfiguredType == typeof(Unicorn));
+        }
+
+        [Test]
+        public void Ignore()
+        {
+            _builder.ComplexType(typeof (Corn))
+                .Ignore(typeof(int), "BaseRadius");
         }
 
         [Test]
         public void Property()
         {
             var property = _builder.Entity(typeof (Unicorn))
-                .Property(typeof (int), "Id");
+                .PrimitiveProperty(typeof (int), "Id");
 
             Assert.NotNull(property);
             Assert.That(property.GetType() == typeof(PrimitivePropertyConfiguration));
@@ -47,7 +54,7 @@ namespace MagicDbModelBuilder.Tests
         public void Property_Supports_Nullable()
         {
             var property = _builder.Entity(typeof (Unicorn))
-                .Property(typeof (int?), "CornCount");
+                .PrimitiveProperty(typeof(int?), "ChildCount");
 
             Assert.NotNull(property);
             Assert.That(property.GetType() == typeof(PrimitivePropertyConfiguration));
@@ -57,7 +64,7 @@ namespace MagicDbModelBuilder.Tests
         public void Property_Can_Chain()
         {
             var property = _builder.Entity(typeof (Unicorn))
-                .Property(typeof (int), "Id")
+                .PrimitiveProperty(typeof(int), "Id")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Assert.NotNull(property);
@@ -78,7 +85,7 @@ namespace MagicDbModelBuilder.Tests
         public void DateTimeProperty_Supports_Nullable()
         {
             var property = _builder.Entity(typeof(Unicorn))
-                .DateTimeProperty("LastMatedOn", true);
+                .NullableDateTimeProperty("LastMatedOn");
 
             Assert.NotNull(property);
             Assert.That(property.GetType() == typeof(DateTimePropertyConfiguration));

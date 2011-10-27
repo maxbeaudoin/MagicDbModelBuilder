@@ -52,6 +52,7 @@
     <Compile Include="ConfigurationRegistrarTests.cs" />
     <Compile Include="DbModelBuilderExtensionsTests.cs" />
     <Compile Include="EntityTypeConfigurationWrapperTests.cs" />
+    <Compile Include="Model\Corn.cs" />
     <Compile Include="Model\UnicornEntityTypeConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Unicorn.cs" />

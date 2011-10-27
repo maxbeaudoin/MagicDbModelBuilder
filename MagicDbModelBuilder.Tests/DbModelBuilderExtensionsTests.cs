@@ -22,10 +22,23 @@ namespace MagicDbModelBuilder.Tests
             
             Assert.NotNull(config);
             Assert.That(config.GetType() == typeof(EntityTypeConfigurationWrapper));
-            Assert.That(config.EntityTypeConfiguration.GetType() == typeof(EntityTypeConfiguration<Unicorn>));
-            Assert.That(config.GenericArgument == typeof(Unicorn));
+            Assert.That(config.TypeConfiguration.GetType() == typeof(EntityTypeConfiguration<Unicorn>));
+            Assert.That(config.ConfiguredType == typeof(Unicorn));
 
             Assert.That(_builder.Configurations.IsConfigured(typeof(Unicorn)));
+        }
+
+        [Test]
+        public void ComplexeType()
+        {
+            var config = _builder.ComplexType(typeof(Corn));
+
+            Assert.NotNull(config);
+            Assert.That(config.GetType() == typeof(ComplexTypeConfigurationWrapper));
+            Assert.That(config.TypeConfiguration.GetType() == typeof(ComplexTypeConfiguration<Corn>));
+            Assert.That(config.ConfiguredType == typeof(Corn));
+
+            Assert.That(_builder.Configurations.IsConfigured(typeof(Corn)));
         }
     }
 }
