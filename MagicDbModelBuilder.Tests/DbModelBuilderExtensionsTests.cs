@@ -29,7 +29,7 @@ namespace MagicDbModelBuilder.Tests
         }
 
         [Test]
-        public void ComplexeType()
+        public void ComplexType()
         {
             var config = _builder.ComplexType(typeof(Corn));
 
